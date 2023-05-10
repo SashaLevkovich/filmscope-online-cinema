@@ -1,0 +1,12 @@
+.navbar {
+  @apply py-layout;
+
+  .logo {
+    @apply px-layout flex justify-start items-center mb-10;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+}

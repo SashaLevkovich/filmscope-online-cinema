@@ -1,0 +1,20 @@
+.actions {
+  @apply flex items-center;
+
+  > button {
+    @apply outline-border-none bg-transparent text-xl text-sky-500 opacity-80 transition-opacity  hover:opacity-100;
+
+    &:first-child:hover {
+      @apply transition-colors;
+      color: #6466f1;
+    }
+
+    &:last-child {
+      @apply hover:text-pink-500 transition-colors;
+    }
+
+    &:first-child {
+      @apply mr-4;
+    }
+  }
+}
