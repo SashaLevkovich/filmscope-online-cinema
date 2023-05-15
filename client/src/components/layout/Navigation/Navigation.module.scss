@@ -1,8 +1,8 @@
 .navbar {
-  @apply py-layout;
+  @apply lg:py-layout;
 
   .logo {
-    @apply px-layout flex justify-start items-center mb-10;
+    @apply px-layout hidden lg:flex justify-start items-center mb-10;
 
     img {
       width: auto;

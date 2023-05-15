@@ -1,5 +1,5 @@
 .wrapper {
-  @apply w-1/2 mx-auto my-10 air-block p-7 text-center;
+  @apply w-full sm:w-1/2 mx-auto my-10 air-block p-7 text-center;
 
   > h3 {
     @apply text-2xl font-semibold;

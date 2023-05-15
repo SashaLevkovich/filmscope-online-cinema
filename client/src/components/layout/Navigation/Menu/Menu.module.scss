@@ -1,23 +1,34 @@
 .menu {
-  @apply mb-10 animate-fade;
+  @apply lg:mb-10 animate-fade;
+
+  &:not(:last-child) .heading {
+    @apply mb-6;
+  }
+
+  &:last-child .heading {
+    @apply mb-2;
+  }
 
   .heading {
-    @apply text-gray-500 uppercase text-sm font-semibold pl-layout;
+    @apply hidden lg:block text-gray-500 uppercase text-sm font-semibold pl-layout;
   }
 
   .ul {
+    @apply flex justify-center gap-5 lg:flex-col;
+    min-height: 50px;
+
     > li {
-      @apply px-6 border-r-4 border-r-transparent transition-colors;
+      @apply sm:px-6 flex items-center justify-center border-r-4 border-r-transparent transition-colors lg:justify-start;
 
       > a {
-        @apply flex items-center text-gray-600   mt-6 cursor-pointer;
+        @apply flex items-center  text-gray-600  cursor-pointer justify-center;
 
         > span {
-          @apply ml-3 text-lg hover:text-white;
+          @apply ml-3 hidden lg:block text-lg hover:text-white;
         }
 
         > svg {
-          @apply text-2lg;
+          @apply text-2lg text-gray-400 lg:text-gray-600;
         }
 
         > span,
@@ -27,7 +38,7 @@
       }
 
       &.active {
-        @apply border-r-sky-500;
+        @apply lg:border-r-sky-500;
 
         > a > span {
           @apply text-white;
@@ -38,5 +49,14 @@
         }
       }
     }
+  }
+}
+
+.container {
+  @apply flex justify-evenly sm:justify-center items-center lg:block;
+  max-height: 75px;
+  
+  @media (min-width: 1024px) {
+    max-height: 100%;
   }
 }

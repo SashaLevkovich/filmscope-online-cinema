@@ -2,9 +2,9 @@ import { FC } from 'react'
 
 import SkeletonLoader from '@/ui/SkeletonLoader'
 
-import { useGenre } from '@/layout/Navigation/Menu/genre/useGenres'
-
 import Menu from '../Menu'
+
+import { useGenre } from '@/layout/Navigation/Menu/genre/useGenres'
 
 const GenreMenu: FC = () => {
   const { isLoading, data } = useGenre()
@@ -14,7 +14,13 @@ const GenreMenu: FC = () => {
       <SkeletonLoader count={4} className="h-7 mt-6" />
     </div>
   ) : (
-    <Menu menu={{ title: 'Популярные жанры', items: data || [] }} />
+    <Menu
+      menu={{
+        title: 'Популярные жанры',
+        items: data || [],
+        className: 'hidden lg:block',
+      }}
+    />
   )
 }
 export default GenreMenu

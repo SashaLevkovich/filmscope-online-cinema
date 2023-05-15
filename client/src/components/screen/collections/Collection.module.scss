@@ -4,20 +4,20 @@ $shadow: 0 10px 10px 0 rgb(0 0 0 / 15%), 0 6px 6px 0 rgb(0 0 0 / 15%),
   0 3px 3px 0 rgb(0 0 0 / 15%);
 
 .collections {
-  @apply flex flex-wrap items-center mt-10;
+  @apply flex flex-wrap items-center gap-10 sm:gap-4 lg:gap-6 mt-10;
 
   > a {
-    @apply mr-4 animate-fade;
-  }
-
-  > a:nth-child(3n) {
-    @apply mr-0;
+    @apply animate-fade;
   }
 }
 
 .collection {
-  @apply relative flex items-end mb-10 h-44 transition-transform;
-  width: 31%;
+  @apply relative flex justify-center items-center lg:items-end h-44 transition-transform;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    width: 31%;
+  }
 
   @include fade-bg-gradient(0deg);
   &::before {

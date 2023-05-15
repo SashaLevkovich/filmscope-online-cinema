@@ -7,12 +7,12 @@
 }
 
 .movies {
-  @apply flex flex-wrap gap-5;
+  @apply flex flex-wrap justify-center sm:justify-start gap-5;
 
   > a {
     @apply animate-fade;
 
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   > a:nth-child(3n) {

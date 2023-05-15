@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
@@ -7,9 +8,9 @@ import { IMenu } from './menu.interface'
 
 const DynamicAuthItem = dynamic(() => import('./auth/AuthItem'), { ssr: false })
 
-const Menu: FC<{ menu: IMenu }> = ({ menu: { title, items } }) => {
+const Menu: FC<{ menu: IMenu }> = ({ menu: { title, items, className } }) => {
   return (
-    <div className={styles.menu}>
+    <div className={cn(styles.menu, className)}>
       <h3 className={styles.heading}>{title}</h3>
 
       <ul className={styles.ul}>
