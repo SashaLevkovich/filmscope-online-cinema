@@ -16,7 +16,7 @@ import { generateSlug } from '@/utils/string/generateSlug'
 import { IActorEditInput } from './actor-edit.interface'
 import { useActorEdit } from './useActorEdit'
 
- const GenreEdit: FC = () => {
+const GenreEdit: FC = () => {
   const {
     handleSubmit,
     register,
@@ -31,9 +31,9 @@ import { useActorEdit } from './useActorEdit'
   const { isLoading, onSubmit } = useActorEdit(setValue)
 
   return (
-    <Meta title="Изменение жанра">
+    <Meta title="Актер">
       <AdminNavigation />
-      <Heading title="Изменение жанра" className="mb-4" />
+      <Heading title="Актер" className="mb-4" />
 
       <form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
         {isLoading ? (

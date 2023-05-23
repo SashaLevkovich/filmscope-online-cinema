@@ -1,5 +1,5 @@
 export const getGenreSlugUrl = (slug: string) => `/genres/${slug}`
-export const getActorSlugUrl = (slug: string) => `/actor/${slug}`
+export const getActorSlugUrl = (slug: string) => `/actors/${slug}`
 export const getMovieSlugUrl = (slug: string) => `/movies/${slug}`
 
 export const getAdminIdUrl = (id: string) => `/manage/${id}`

@@ -3,7 +3,6 @@ import { FC } from 'react'
 import AdminNavigation from '@/ui/admin-panel/AdminNavigation/AdminNavigation'
 import AdminHeader from '@/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/ui/admin-table/AdminTable/AdminTable'
-import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 import Heading from '@/ui/heading/Heading'
 
 import Meta from '@/utils/meta/Meta'
@@ -11,9 +10,7 @@ import Meta from '@/utils/meta/Meta'
 import { useUser } from './useUser'
 
 const UserList: FC = () => {
-  const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useUser()
-
-  const users: ITableItem[] = data?.filter(el => !el.isAdmin)
+  const { handleSearch, isLoading, searchTerm, data } = useUser()
 
   return (
     <Meta title="Пользователи">
@@ -24,9 +21,8 @@ const UserList: FC = () => {
 
       <AdminTable
         isLoading={isLoading}
-        removeHandler={deleteAsync}
         headerItems={['E-mail', 'Дата регистрации']}
-        tableItems={users || []}
+        tableItems={data || []}
       />
     </Meta>
   )

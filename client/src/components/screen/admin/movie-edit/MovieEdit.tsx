@@ -41,9 +41,9 @@ const GenreEdit: FC = () => {
   const { isLoading: isGenresLoading, data: genres } = useAdminGenres()
 
   return (
-    <Meta title="Изменение фильма">
+    <Meta title="Фильм">
       <AdminNavigation />
-      <Heading title="Изменение фильма" className="mb-4" />
+      <Heading title="Фильм" className="mb-4" />
 
       <form onSubmit={handleSubmit(onSubmit)} className={formStyles.form}>
         {isLoading ? (

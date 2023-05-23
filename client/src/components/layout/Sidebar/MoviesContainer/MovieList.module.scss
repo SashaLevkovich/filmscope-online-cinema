@@ -7,6 +7,7 @@
 
   .link {
     @apply p-2.5 btn-primary block text-center cursor-pointer;
+    width: 170px;
   }
 
   .item {
@@ -34,7 +35,8 @@
       }
 
       .genres {
-        @apply text-gray-600 text-sm;
+        @apply text-sm;
+        color: #999999;
 
         > a {
           @apply transition-colors;

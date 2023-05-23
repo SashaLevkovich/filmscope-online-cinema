@@ -21,9 +21,9 @@ const UserEdit: FC = () => {
   const { isLoading, onSubmit } = useUserEdit(setValue)
 
   return (
-    <Meta title="Изменение пользователя">
+    <Meta title="Пользователь">
       <AdminNavigation />
-      <Heading title="Изменение пользователя" className="mb-4" />
+      <Heading title="Пользователь" className="mb-4" />
 
       <form onSubmit={handleSubmit(onSubmit)} className="admin-form">
         {isLoading ? (

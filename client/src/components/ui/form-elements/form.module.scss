@@ -1,4 +1,4 @@
- .button {
+.button {
   @apply btn-primary py-2 px-10;
 }
 
@@ -51,7 +51,7 @@
       }
 
       > input {
-        @apply block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-sky-500 opacity-70 file:text-white transition-opacity;
+        @apply block file:btn-primary w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-sky-500 opacity-90 file:text-white transition-opacity;
       }
 
       &:hover > input {

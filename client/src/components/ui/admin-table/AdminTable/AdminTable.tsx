@@ -11,7 +11,7 @@ interface IAdminTable {
   tableItems: ITableItem[]
   isLoading: boolean
   headerItems: string[]
-  removeHandler: (id: string) => void
+  removeHandler?: (id: string) => void
 }
 
 const AdminTable: FC<IAdminTable> = ({
@@ -20,6 +20,29 @@ const AdminTable: FC<IAdminTable> = ({
   removeHandler,
   tableItems,
 }) => {
+  if (removeHandler !== undefined)
+    return (
+      <div>
+        <AdminTableHeader headersItems={headerItems} />
+
+        {isLoading ? (
+          <SkeletonLoader count={6} height={48} className="mt-4" />
+        ) : tableItems.length ? (
+          tableItems?.map(tableItem => (
+            <AdminTableItem
+              removeHandler={() =>
+                removeHandler ? removeHandler(tableItem._id) : null
+              }
+              tableItem={tableItem}
+              key={tableItem._id}
+            />
+          ))
+        ) : (
+          <div className={styles.notFound}>Список пуст</div>
+        )}
+      </div>
+    )
+
   return (
     <div>
       <AdminTableHeader headersItems={headerItems} />
@@ -28,11 +51,7 @@ const AdminTable: FC<IAdminTable> = ({
         <SkeletonLoader count={6} height={48} className="mt-4" />
       ) : tableItems.length ? (
         tableItems?.map(tableItem => (
-          <AdminTableItem
-            removeHandler={() => removeHandler(tableItem._id)}
-            tableItem={tableItem}
-            key={tableItem._id}
-          />
+          <AdminTableItem tableItem={tableItem} key={tableItem._id} />
         ))
       ) : (
         <div className={styles.notFound}>Список пуст</div>
@@ -41,8 +60,3 @@ const AdminTable: FC<IAdminTable> = ({
   )
 }
 export default AdminTable
-
-
-
-import { useState, useRef } from 'react';
-

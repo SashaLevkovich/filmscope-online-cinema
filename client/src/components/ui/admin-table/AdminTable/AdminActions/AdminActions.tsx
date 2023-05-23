@@ -7,7 +7,7 @@ import styles from './AdminActions.module.scss'
 
 interface IAdminActions {
   editUrl: string
-  removeHandler: () => void
+  removeHandler?: () => void
 }
 
 const AdminActions: FC<IAdminActions> = ({ editUrl, removeHandler }) => {
@@ -19,9 +19,11 @@ const AdminActions: FC<IAdminActions> = ({ editUrl, removeHandler }) => {
         <MaterialIcon name="MdEdit" />
       </button>
 
-      <button onClick={removeHandler}>
-        <MaterialIcon name="MdDelete" />
-      </button>
+      {removeHandler ? (
+        <button onClick={removeHandler}>
+          <MaterialIcon name="MdDelete" />
+        </button>
+      ) : null}
     </div>
   )
 }

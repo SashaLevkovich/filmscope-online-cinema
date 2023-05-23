@@ -44,6 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     }))
 
+
     const dataTrendingMovies = await MovieService.getPopular()
 
     const trendingMovies: IGalleryItem[] =  dataTrendingMovies
